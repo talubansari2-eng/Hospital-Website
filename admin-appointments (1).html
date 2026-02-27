@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Appointments | Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>🏥 Admin – Appointment Records</h1>
+    <a href="dashboard.html">⬅ Back to Dashboard</a>
+</header>
+
+<section class="dashboard">
+
+    <div class="table-box">
+        <h3>All User Appointments</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Mobile</th>
+                    <th>Doctor</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="appointmentTable">
+                <!-- JS will inject rows -->
+            </tbody>
+        </table>
+    </div>
+
+</section>
+
+<script src="script.js"></script>
+
+<script>
+    const table = document.getElementById("appointmentTable");
+    let appointments = JSON.parse(localStorage.getItem("appointments")) || [];
+
+    function renderAppointments() {
+        table.innerHTML = "";
+
+        appointments.forEach((app, index) => {
+            table.innerHTML += `
+                <tr>
+                    <td>${app.name}</td>
+                    <td>${app.phone}</td>
+                    <td>${app.doctor}</td>
+                    <td>${app.date}</td>
+                    <td>
+                        <span class="status ${app.status === "Approved" ? "approved" : "pending"}">
+                            ${app.status}
+                        </span>
+                    </td>
+                    <td>
+                        <button class="btn approve" onclick="approveAppointment(${index})">Approve</button>
+                        <button class="btn delete" onclick="deleteAppointment(${index})">Delete</button>
+                    </td>
+                </tr>
+            `;
+        });
+    }
+
+    function approveAppointment(index) {
+        appointments[index].status = "Approved";
+        localStorage.setItem("appointments", JSON.stringify(appointments));
+        renderAppointments();
+    }
+
+    function deleteAppointment(index) {
+        if (confirm("Delete this appointment?")) {
+            appointments.splice(index, 1);
+            localStorage.setItem("appointments", JSON.stringify(appointments));
+            renderAppointments();
+        }
+    }
+
+    renderAppointments();
+</script>
+
+</body>
+</html>

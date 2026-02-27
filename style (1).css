@@ -1,0 +1,261 @@
+/* =====================
+   GLOBAL STYLES
+===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* =====================
+   HEADER & NAVBAR
+===================== */
+header {
+    background-color: #0d6efd;
+    padding: 15px 40px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+nav a {
+    color: #fff;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* =====================
+   BANNER / HERO
+===================== */
+.banner,
+.hero {
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+.hero {
+    height: 85vh;
+}
+
+.banner h2,
+.hero h2 {
+    font-size: 40px;
+}
+
+/* =====================
+   SECTION COMMON
+===================== */
+section {
+    padding: 50px 40px;
+}
+
+/* =====================
+   CARDS
+===================== */
+.cards,
+.service-box,
+.doctor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card,
+.doctor-card,
+.contact-info,
+.contact-form,
+.form-box,
+.table-box {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* =====================
+   DOCTOR CARDS
+===================== */
+.doctor-card {
+    text-align: center;
+    overflow: hidden;
+}
+
+.doctor-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.doctor-card h4 {
+    margin-top: 15px;
+    color: #0d6efd;
+}
+
+.doctor-card span {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 14px;
+    background-color: #e7f1ff;
+    color: #0d6efd;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+/* =====================
+   FORMS
+===================== */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #0d6efd;
+}
+
+textarea {
+    resize: none;
+}
+
+/* =====================
+   BUTTONS
+===================== */
+.btn {
+    background-color: #0d6efd;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #084298;
+}
+
+.approve {
+    background-color: #198754;
+}
+
+.delete {
+    background-color: #dc3545;
+}
+
+/* =====================
+   DASHBOARD
+===================== */
+.dashboard .cards .card h2 {
+    font-size: 32px;
+    color: #0d6efd;
+}
+
+/* =====================
+   TABLE
+===================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+}
+
+th {
+    background-color: #f1f5ff;
+}
+
+.status {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.approved {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer {
+    background-color: #0d6efd;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav a {
+        margin-left: 10px;
+    }
+
+    .banner h2,
+    .hero h2 {
+        font-size: 28px;
+    }
+}

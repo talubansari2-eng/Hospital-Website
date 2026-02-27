@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Appointment | SmartCare</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Poppins, sans-serif;
+            background: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            width: 350px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background: #0d6efd;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="form-box">
+    <h2>Book Appointment</h2>
+
+    <input type="text" id="name" placeholder="Patient Name" required>
+    <input type="text" id="phone" placeholder="Mobile Number" required>
+
+    <select id="doctor">
+        <option value="">Select Doctor</option>
+        <option>Dr. Sharma</option>
+        <option>Dr. Patel</option>
+        <option>Dr. Khan</option>
+    </select>
+
+    <input type="date" id="date">
+
+    <button onclick="bookAppointment()">Book Now</button>
+</div>
+
+<script>
+function bookAppointment() {
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const doctor = document.getElementById("doctor").value;
+    const date = document.getElementById("date").value;
+
+    if (!name || !phone || !doctor || !date) {
+        alert("Please fill all fields");
+        return;
+    }
+
+    const newAppointment = {
+        name,
+        phone,
+        doctor,
+        date,
+        status: "Pending"
+    };
+
+    let appointments = JSON.parse(localStorage.getItem("appointments")) || [];
+    appointments.push(newAppointment);
+
+    localStorage.setItem("appointments", JSON.stringify(appointments));
+
+    alert("Appointment booked successfully!");
+    window.location.reload();
+}
+</script>
+
+</body>
+</html>

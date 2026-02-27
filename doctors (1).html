@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Doctors | SmartCare Hospital</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f8;
+            color: #333;
+        }
+
+        header {
+            background-color: #0d6efd;
+            padding: 15px 40px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .banner {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url("https://images.unsplash.com/photo-1606813907291-d86efa8b94db") center/cover;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .banner h2 {
+            font-size: 40px;
+        }
+
+        .doctors {
+            padding: 50px 40px;
+        }
+
+        .doctors h3 {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 30px;
+            color: #0d6efd;
+        }
+
+        .doctor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .doctor-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .doctor-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .doctor-card h4 {
+            margin-top: 15px;
+            font-size: 20px;
+            color: #0d6efd;
+        }
+
+        .doctor-card p {
+            margin: 8px 15px;
+            font-size: 14px;
+        }
+
+        .doctor-card span {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 6px 14px;
+            background-color: #e7f1ff;
+            color: #0d6efd;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        footer {
+            background-color: #0d6efd;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>🏥 SmartCare Hospital</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="doctors.html">Doctors</a>
+            <a href="appointment.html">Appointment</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+        <h2>Meet Our Expert Doctors</h2>
+    </section>
+
+    <!-- Doctors Section -->
+    <section class="doctors">
+        <h3>Our Specialists</h3>
+
+        <div class="doctor-grid">
+
+            <div class="doctor-card">
+                <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d" alt="Doctor">
+                <h4>Dr. Rajesh Sharma</h4>
+                <p>MBBS, MD (Cardiology)</p>
+                <p>10+ Years Experience</p>
+                <span>Cardiologist</span>
+            </div>
+
+            <div class="doctor-card">
+                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2" alt="Doctor">
+                <h4>Dr. Neha Verma</h4>
+                <p>MBBS, MS (Orthopedics)</p>
+                <p>8+ Years Experience</p>
+                <span>Orthopedic</span>
+            </div>
+
+            <div class="doctor-card">
+                <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7" alt="Doctor">
+                <h4>Dr. Amit Patel</h4>
+                <p>MBBS, DM (Neurology)</p>
+                <p>12+ Years Experience</p>
+                <span>Neurologist</span>
+            </div>
+
+            <div class="doctor-card">
+                <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e" alt="Doctor">
+                <h4>Dr. Priya Singh</h4>
+                <p>MBBS, MD (Pediatrics)</p>
+                <p>7+ Years Experience</p>
+                <span>Pediatrician</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 SmartCare Hospital | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
